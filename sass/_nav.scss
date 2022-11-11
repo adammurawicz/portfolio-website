@@ -1,0 +1,72 @@
+
+// nav mobile
+
+.nav-mobile {
+    
+    &__btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 1em;
+        background: none;
+        border: 1px solid transparent;
+        cursor: pointer;
+        z-index: 3;
+
+        &:focus{
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, .5);
+            border-radius: 8px;
+        }
+
+        &:hover {
+            .nav-mobile__btn__bars::after, 
+            .nav-mobile__btn__bars::before {
+                width: 100%;
+            }
+        }
+
+        &__box {
+         position: relative;
+         width: 40px;
+         height: 30px;
+        }
+
+        &__bars,
+        &__bars::after,
+        &__bars::before {
+            position: absolute;
+            right: 0;
+            height: 3px;
+            content: '';
+            background-color: $my-white;
+            transition: width .3s;
+            background-color: green;
+        }
+
+        &__bars {
+            width: 100%;
+
+            &::after {
+                top: 13px;
+                width: 60%;
+            }
+
+            &::before {
+                top: 27px;
+                width: 30%;
+                transition-delay: .1s;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-mobile {
+        display: none;
+    }
+}
+
+.nav-desktop {
+    display: none;
+}
