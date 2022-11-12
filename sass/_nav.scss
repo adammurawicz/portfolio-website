@@ -11,7 +11,7 @@
         background: none;
         border: 1px solid transparent;
         cursor: pointer;
-        z-index: 3;
+        z-index: 5;
 
         &:focus{
             outline: none;
@@ -41,7 +41,7 @@
             content: '';
             background-color: $my-white;
             transition: width .3s;
-            background-color: green;
+            background-color: $my-white;
         }
 
         &__bars {
@@ -59,6 +59,52 @@
             }
         }
     }
+
+    &__items {
+        position: fixed;
+        transform: translateX(100%);
+        top: 0;
+        height: 100vH;
+        width: 100%;
+        background-image: $gradientOne;
+        z-index: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: transform .3s cubic-bezier(0.65, 0.05, 0.36, 1);
+        
+            &--active {
+                transform: translate(0);
+                transition: transform .3s cubic-bezier(0.65, 0.05, 0.36, 1);
+            }
+    }
+
+    &__item {
+        position: relative;
+        display: block;
+        color: $my-white;
+        margin: 0.5em 0;
+        padding: 0.5em 2em;
+        font-size: 2rem;
+        text-decoration: none;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background-color: $my-white;
+            content: '';
+            transform: scaleY(0);
+            transition: transform .3s;
+        }
+
+        &:hover::before {
+            transform: scaleY(1);
+        }
+    }
 }
 
 @media (min-width: 768px) {
@@ -66,6 +112,22 @@
         display: none;
     }
 }
+
+
+@keyframes navItemsAnimation {
+    from {
+        transform: translateX(200%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.nav-items-animation {
+    animation: navItemsAnimation 1s both;
+}
+
 
 .nav-desktop {
     display: none;
