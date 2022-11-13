@@ -1,0 +1,20 @@
+
+.about-me{
+padding: 5em 0em;
+color: $my-black;
+
+    &__text {
+        @include wrapper;
+        
+        h3 {
+            text-align: center;
+        }
+
+        p {
+            margin-top: 1em;
+            text-align: justify;
+        }
+
+        
+    }
+}

@@ -31,6 +31,14 @@
   left: -50px;
 }
 
+.green-line {
+  margin: 0.5em auto;
+  height: 2px;
+  width: 20%;
+  max-width: 200px;
+  background-color: #34401A;
+}
+
 .boom-btn {
   position: absolute;
   width: 40px;
@@ -477,6 +485,23 @@
     font-size: 3.2rem;
   }
 }
+.about-me {
+  padding: 5em 0em;
+  color: #2e2e2e;
+}
+.about-me__text {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.about-me__text h3 {
+  text-align: center;
+}
+.about-me__text p {
+  margin-top: 1em;
+  text-align: justify;
+}
+
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

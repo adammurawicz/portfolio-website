@@ -8,6 +8,8 @@
     height: 100vH;
 }
 
+
+
 .dark {
     position: absolute;
     top: 0;
@@ -30,6 +32,14 @@
 .white-left-block {
     bottom: 0;
     left: -50px;
+}
+
+.green-line {
+    margin: .5em auto;
+    height: 2px;
+    width: 20%;
+    max-width: 200px;
+    background-color: $greenDark;
 }
 
 .boom-btn {
@@ -55,6 +65,13 @@
     background-attachment: fixed;
     background-position: center;
 }
+
+@mixin wrapper {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+// media
 
 @media (min-width:576px) {
     .block {
