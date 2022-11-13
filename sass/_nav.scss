@@ -5,8 +5,8 @@
     
     &__btn {
         position: fixed;
-        top: 20px;
-        right: 20px;
+        top: 15px;
+        right: 15px;
         padding: 1em;
         background: none;
         border: 1px solid transparent;
@@ -37,7 +37,7 @@
         &__bars::before {
             position: absolute;
             right: 0;
-            height: 3px;
+            height: 2.5px;
             content: '';
             background-color: $my-white;
             transition: width .3s;
@@ -48,12 +48,12 @@
             width: 100%;
 
             &::after {
-                top: 13px;
+                top: 12px;
                 width: 60%;
             }
 
             &::before {
-                top: 27px;
+                top: 26px;
                 width: 30%;
                 transition-delay: .1s;
             }
@@ -107,18 +107,11 @@
     }
 }
 
-@media (min-width: 768px) {
-    .nav-mobile {
-        display: none;
-    }
-}
-
-
 @keyframes navItemsAnimation {
     from {
         transform: translateX(200%);
     }
-
+    
     to {
         transform: translateX(0);
     }
@@ -128,7 +121,54 @@
     animation: navItemsAnimation 1s both;
 }
 
-
 .nav-desktop {
     display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    justify-content: space-evenly;
+   
+    &__item {
+        position: relative;
+        color: $my-white;
+        text-decoration: none;
+        padding: 1em;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 1.5px;
+            left: 10%;
+            bottom: 0;
+            transform: scale(0);
+            transform-origin: center;
+            transition: transform .3s;
+            background-color: $my-white;
+        }
+        
+        &:hover::before {
+            transform: scale(1);
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .nav-mobile {
+        display: none;
+    }
+
+    .nav-desktop {
+        display: flex;
+    }
+}
+
+@media (min-width: 1400px){
+    .nav-desktop {
+
+        &__item {
+            font-size: 1.85rem;
+        }
+    }
 }

@@ -1,6 +1,13 @@
 
 // class
 
+.wrapperOne {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100vH;
+}
+
 .dark {
     position: absolute;
     top: 0;
@@ -23,6 +30,22 @@
 .white-left-block {
     bottom: 0;
     left: -50px;
+}
+
+.boom-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255, .2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: animationBtn .5s;
+}
+
+@keyframes animationBtn {
+    to {
+        transform: translate(-50%, -50%) scale(2);
+    }
 }
 
 // mixins

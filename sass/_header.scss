@@ -1,6 +1,7 @@
 
 .header {
-    position: relative;
+    position: absolute;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,9 +21,8 @@
 
     &__img {
         margin-top: 2em;
-        width: 8em;
+        width: 7em;
         object-fit: cover;
-        opacity: .75;
         border-radius: 25px;
     }
 
@@ -30,14 +30,15 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 6em;
+        height: 5.5em;
         
         a {
+            position: relative;
             color: $my-white;
             text-decoration: none;
             background-color: rgba(0,0,0, .6);
-            height: 2em;
-            line-height: 2em;
+            height: 1.8em;
+            line-height: 1.8em;
             border-radius: 15px;
         }
     }
@@ -49,6 +50,54 @@
     }
 }
 
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+.zoomIn {
+    animation: zoomIn;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn;
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn2 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .85;
+    }
+}
+
+.fadeIn2 {
+    animation: fadeIn2;
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
 @media (min-width:768px) {
     
     .header {
@@ -56,20 +105,20 @@
     
         &__img {
             margin-top: 8em;
-            width: 12em;
+            width: 10em;
             border-radius: 35px;
         }
     
         &__text {
-            height: 8em;
+            height: 10em;
 
             h3 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             a {
-                height: 3em;
-                line-height: 3em;
+                height: 2.8em;
+                line-height: 2.8em;
                 border-radius: 15px;
                 width: 80%;
                 margin: auto;
@@ -77,7 +126,8 @@
         }
     
         &__icon {
-            font-size: 2.8rem;
+            margin-top: 0;
+            font-size: 2.7rem;
         }
     }
 }
@@ -86,27 +136,28 @@
     .header {
     
         &__img {
-            margin-top: 10em;
-            width: 14em;
+            margin-top: 8em;
+            width: 12em;
             border-radius: 45px;
         }
     
         &__text {
-            height: 12em;
+            height: 14em;
 
             h3 {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
             
             a {
-                height: 3.5em;
-                line-height: 3.5em;
+                height: 3.2em;
+                line-height: 3.2em;
                 border-radius: 25px;
             }
         }
     
         &__icon {
-            font-size: 3rem;
+            margin-top: -8em;
+            font-size: 2.8rem;
         }
     }
 }
@@ -115,10 +166,10 @@
     .header {
     
         &__text {
-            height: 14em;
+            height: 12em;
 
             h3 {
-                font-size: 3.5rem;
+                font-size: 3.2rem;
             }
             
             a {
@@ -128,6 +179,7 @@
         }
     
         &__icon {
+            margin-top: -4em;
             font-size: 3.2rem;
         }
     }
