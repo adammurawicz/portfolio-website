@@ -31,10 +31,15 @@
   left: -50px;
 }
 
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+}
+
 .green-line {
-  margin: 0.5em auto;
+  margin: 0.5em auto 2em;
   height: 2px;
-  width: 20%;
+  width: 30%;
   max-width: 200px;
   background-color: #34401A;
 }
@@ -47,8 +52,8 @@
   border-radius: 50%;
   -webkit-transform: translate(-50%, -50%) scale(0);
           transform: translate(-50%, -50%) scale(0);
-  -webkit-animation: animationBtn 0.5s;
-          animation: animationBtn 0.5s;
+  -webkit-animation: animationBtn 0.2s;
+          animation: animationBtn 0.2s;
 }
 
 @-webkit-keyframes animationBtn {
@@ -70,6 +75,11 @@
     width: 300px;
   }
 }
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+  }
+}
 @media (min-width: 992px) {
   .block {
     height: 40px;
@@ -79,6 +89,9 @@
 @media (min-width: 992px) {
   .block {
     width: 600px;
+  }
+  .section-title {
+    font-size: 4rem;
   }
 }
 .nav-mobile__btn {
@@ -123,7 +136,7 @@
   width: 60%;
 }
 .nav-mobile__btn__bars::before {
-  top: 26px;
+  top: 24px;
   width: 30%;
   -webkit-transition-delay: 0.1s;
           transition-delay: 0.1s;
@@ -486,22 +499,132 @@
   }
 }
 .about-me {
-  padding: 5em 0em;
   color: #2e2e2e;
-}
-.about-me__text {
-  width: 90%;
+  width: 85%;
   max-width: 1400px;
   margin: 0 auto;
-}
-.about-me__text h3 {
-  text-align: center;
+  overflow: hidden;
 }
 .about-me__text p {
   margin-top: 1em;
+  font-size: 2rem;
   text-align: justify;
 }
+.about-me__skills {
+  margin-top: 3em;
+}
+.about-me__skills h4 {
+  font-size: 2rem;
+  text-align: center;
+}
+.about-me__skills__items {
+  margin-top: 2.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.about-me__skills__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1em 0;
+}
+.about-me__skills__item__title {
+  font-weight: bold;
+}
+.about-me__skills__item__mark {
+  margin: 0 1em;
+}
 
+@media (min-width: 768px) {
+  .about-me__text p {
+    margin-top: 1.8em;
+    font-size: 2.2rem;
+  }
+  .about-me__skills {
+    margin-top: 3.5em;
+  }
+  .about-me__skills h4 {
+    font-size: 2.6rem;
+  }
+  .about-me__skills__items {
+    margin-top: 2.4em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .about-me__skills__item {
+    margin: 1em 1em;
+  }
+  .about-me__skills__item__title {
+    font-size: 1.8rem;
+  }
+  .about-me__skills__item__mark {
+    margin: 0 1.2em;
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 992px) {
+  .about-me__text p {
+    font-size: 2.2rem;
+  }
+  .about-me__skills {
+    margin-top: 4em;
+  }
+  .about-me__skills h4 {
+    font-size: 3.2rem;
+  }
+  .about-me__skills__items {
+    margin-top: 2.6em;
+  }
+  .about-me__skills__item {
+    margin: 2em 2em;
+  }
+  .about-me__skills__item__title {
+    font-size: 2.1rem;
+  }
+  .about-me__skills__item__mark {
+    margin: 0 1.4em;
+    font-size: 2.1rem;
+  }
+}
+@media (min-width: 1400px) {
+  .about-me__skills {
+    margin-top: 6em;
+  }
+  .about-me__skills h4 {
+    font-size: 3.6rem;
+  }
+  .about-me__skills__items {
+    margin-top: 3em;
+  }
+  .about-me__skills__item {
+    margin: 2.5em 2.5em;
+  }
+  .about-me__skills__item__title {
+    font-size: 2.2rem;
+  }
+  .about-me__skills__item__mark {
+    margin: 0 1.6em;
+    font-size: 2.2rem;
+  }
+}
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -518,4 +641,19 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
+}
+
+section {
+  padding: 5em 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 6em 0;
+  }
+}
+@media (min-width: 992px) {
+  section {
+    padding: 8em 0;
+  }
 }/*# sourceMappingURL=style.css.map */

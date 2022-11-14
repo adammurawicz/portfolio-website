@@ -1,20 +1,151 @@
 
 .about-me{
-padding: 5em 0em;
 color: $my-black;
+@include wrapper;
 
     &__text {
-        @include wrapper;
-        
-        h3 {
-            text-align: center;
-        }
 
         p {
             margin-top: 1em;
+            font-size: 2rem;
             text-align: justify;
         }
 
         
     }
+
+    &__skills {
+        margin-top: 3em;
+
+        h4 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        &__items {
+            margin-top: 2.2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__item {
+            display: flex;
+            margin: 1em 0;
+
+            &__title {
+              font-weight: bold;
+            }
+            
+            &__mark {
+                margin: 0 1em;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .about-me{
+            &__text {
+        
+                p {
+                    margin-top: 1.8em;
+                    font-size: 2.2rem;
+                }
+            }
+        
+            &__skills {
+                margin-top: 3.5em;
+        
+                h4 {
+                    font-size: 2.6rem;
+                }
+        
+                &__items {
+                    margin-top: 2.4em;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+        
+                &__item {
+                    margin: 1em 1em;
+        
+                    &__title {
+                      font-size: 1.8rem;
+                    }
+                    
+                    &__mark {
+                        margin: 0 1.2em;
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+}
+
+@media (min-width: 992px) {
+    .about-me{
+            &__text {
+        
+                p {
+                    font-size: 2.2rem;
+                }
+            }
+        
+            &__skills {
+                margin-top: 4em;
+        
+                h4 {
+                    font-size: 3.2rem;
+                }
+        
+                &__items {
+                    margin-top: 2.6em;
+                }
+        
+                &__item {
+                    margin: 2em 2em;
+        
+                    &__title {
+                      font-size: 2.1rem;
+                    }
+                    
+                    &__mark {
+                        margin: 0 1.4em;
+                        font-size: 2.1rem;
+                    }
+                }
+            }
+        }
+}
+
+@media (min-width: 1400px) {
+    .about-me{
+            &__skills {
+                margin-top: 6em;
+        
+                h4 {
+                    font-size: 3.6rem;
+                }
+        
+                &__items {
+                    margin-top: 3em;
+                }
+        
+                &__item {
+                    margin: 2.5em 2.5em;
+        
+                    &__title {
+                      font-size: 2.2rem;
+                    }
+                    
+                    &__mark {
+                        margin: 0 1.6em;
+                        font-size: 2.2rem;
+                    }
+                }
+            }
+        }
 }
