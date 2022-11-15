@@ -1,0 +1,240 @@
+
+.edu-work {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    background-image: url('../img/workEduMobile.jpg');
+    @include heroImg;
+    color: $my-white;
+
+    &__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        z-index: 3;
+    }
+
+    &__timelines {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h4 {
+            padding: 2em;
+            font-size: 2rem;
+        }
+
+        &__items {
+            position: relative;
+            // width: 100%;
+            // max-width: 800px;
+
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                // margin: 0 2em;
+                list-style: none;
+            }
+
+            li {
+                text-align: center;
+                position: relative;
+                margin-bottom: 2em;
+                padding: 1em;
+                width: 80%;
+                border: 1px solid $greenLight;
+                border-radius: 8px;
+
+                h6 {
+                    font-size: 1.4rem;
+                    padding: 1em 0;
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    padding: .5em 0;
+                }
+
+                p:last-of-type {
+                    font-style: italic;
+                }
+            }
+
+            // li::after {
+            //     position: absolute;
+            //     top: calc(50% - 10px);
+            //     width: 20px;
+            //     height: 20px;
+            //     background-color: $greenLight;
+            //     border-radius: 50%;
+            //     content: '';
+            // }
+
+            // li:nth-child(even) {
+            //     align-self: flex-end;
+            //     transform: translateX(20px);
+            // }
+
+            // li:nth-child(even)::after {
+            //     left: -31px;
+            // }
+
+            // li:nth-child(odd) {
+            //     transform: translateX(-20px);
+            // }
+
+            li:nth-child(odd)::after {
+                right: -31px;
+            }
+
+        }
+
+        // &__items::before {
+        //     position: absolute;
+        //     top: 0;
+        //     left: 50%;
+        //     display: block;
+        //     width: 2px;
+        //     height: 100%;
+        //     background-color: $greenLight;
+        //     content: '';
+        // }
+    }
+}
+
+@media (min-width:768px) {
+    .edu-work {
+        background-image: url('../img/workEduDesktop.jpg');
+    
+        &__timelines {
+    
+            h4 {
+                padding: 3em;
+                font-size: 3rem;
+            }
+    
+            &__items {    
+    
+                li {
+                    border-radius: 16px;
+    
+                    h6 {
+                        font-size: 2rem;
+                        padding: 1.5em 0;
+                    }
+    
+                    p {
+                        font-size: 1.8rem;
+                        padding: .6em 0;
+                    }
+                }
+    
+            }
+
+        }
+    }
+}
+
+@media (min-width:992px) {
+    
+.edu-work {
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &__timelines {
+
+        h4 {
+            padding: 2em;
+            font-size: 2rem;
+        }
+
+        &__items {
+            position: relative;
+            width: 100%;
+
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                // justify-content: center;
+                // align-items: center;
+                margin: 0 2em;
+                list-style: none;
+            }
+
+            li {
+                // text-align: flex;
+                align-self: flex-start;
+                position: relative;
+                margin-bottom: 2em;
+                padding: 1em;
+                width: 50%;
+                border: 1px solid $greenLight;
+                border-radius: 8px;
+
+                h6 {
+                    font-size: 1.4rem;
+                    padding: 1em 0;
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    padding: .5em 0;
+                }
+
+                p:last-of-type {
+                    font-style: italic;
+                }
+            }
+
+            li::after {
+                position: absolute;
+                top: calc(50% - 10px);
+                width: 20px;
+                height: 20px;
+                background-color: $greenLight;
+                border-radius: 50%;
+                content: '';
+            }
+
+            li:nth-child(even) {
+                align-self: flex-end;
+                transform: translateX(20px);
+            }
+
+            li:nth-child(even)::after {
+                left: -31px;
+            }
+
+            li:nth-child(odd) {
+                transform: translateX(-20px);
+            }
+
+            li:nth-child(odd)::after {
+                right: -31px;
+            }
+
+        }
+
+        &__items::before {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            display: block;
+            width: 2px;
+            height: 100%;
+            background-color: $greenLight;
+            content: '';
+        }
+    }
+}
+}
