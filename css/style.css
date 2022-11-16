@@ -36,12 +36,19 @@
   font-size: 2.2rem;
 }
 
-.green-line {
+.line {
   margin: 0.5em auto 2em;
   height: 2px;
   width: 30%;
   max-width: 200px;
+}
+
+.green-line {
   background-color: #34401A;
+}
+
+.white-line {
+  background-color: #f8f8f8;
 }
 
 .boom-btn {
@@ -663,10 +670,11 @@
           flex-direction: column;
 }
 .edu-work__timelines h4 {
-  padding: 2em;
+  margin-top: 2em;
   font-size: 2rem;
 }
 .edu-work__timelines__items {
+  margin-top: 2em;
   position: relative;
 }
 .edu-work__timelines__items ul {
@@ -690,7 +698,7 @@
   position: relative;
   margin-bottom: 2em;
   padding: 1em;
-  width: 80%;
+  width: 100%;
   border: 1px solid #CAD959;
   border-radius: 8px;
 }
@@ -701,6 +709,10 @@
 .edu-work__timelines__items li p {
   font-size: 1.4rem;
   padding: 0.5em 0;
+}
+.edu-work__timelines__items li p.description {
+  margin-top: -1em;
+  font-style: italic;
 }
 .edu-work__timelines__items li p:last-of-type {
   font-style: italic;
@@ -714,8 +726,10 @@
     background-image: url("../img/workEduDesktop.jpg");
   }
   .edu-work__timelines h4 {
-    padding: 3em;
     font-size: 3rem;
+  }
+  .edu-work__timelines__items {
+    margin-top: 4em;
   }
   .edu-work__timelines__items li {
     border-radius: 16px;
@@ -730,60 +744,59 @@
   }
 }
 @media (min-width: 992px) {
+  .edu-work__timelines h4 {
+    font-size: 3.4rem;
+  }
+  .edu-work__timelines__items {
+    margin-top: 6em;
+  }
+  .edu-work__timelines__items li {
+    border-radius: 22px;
+  }
+  .edu-work__timelines__items li h6 {
+    font-size: 2.6rem;
+  }
+  .edu-work__timelines__items li p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1400px) {
   .edu-work__container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
   }
+  .edu-work__timelines {
+    padding: 4em;
+  }
   .edu-work__timelines h4 {
-    padding: 2em;
-    font-size: 2rem;
+    font-size: 3.5rem;
   }
   .edu-work__timelines__items {
-    position: relative;
     width: 100%;
+    margin-top: 8em;
   }
   .edu-work__timelines__items ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin: 0 2em;
-    list-style: none;
+    min-width: 600px;
   }
   .edu-work__timelines__items li {
     -ms-flex-item-align: start;
         align-self: flex-start;
-    position: relative;
-    margin-bottom: 2em;
-    padding: 1em;
+    margin-bottom: 4em;
     width: 50%;
-    border: 1px solid #CAD959;
-    border-radius: 8px;
+    border-radius: 16px;
   }
   .edu-work__timelines__items li h6 {
-    font-size: 1.4rem;
-    padding: 1em 0;
+    font-size: 1.8rem;
   }
   .edu-work__timelines__items li p {
-    font-size: 1.4rem;
-    padding: 0.5em 0;
-  }
-  .edu-work__timelines__items li p:last-of-type {
-    font-style: italic;
+    font-size: 1.8rem;
   }
   .edu-work__timelines__items li::after {
     position: absolute;

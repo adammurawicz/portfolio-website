@@ -21,22 +21,19 @@
         flex-direction: column;
 
         h4 {
-            padding: 2em;
+            margin-top: 2em;
             font-size: 2rem;
         }
 
         &__items {
+            margin-top: 2em;
             position: relative;
-            // width: 100%;
-            // max-width: 800px;
-
 
             ul {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                // margin: 0 2em;
                 list-style: none;
             }
 
@@ -45,7 +42,7 @@
                 position: relative;
                 margin-bottom: 2em;
                 padding: 1em;
-                width: 80%;
+                width: 100%;
                 border: 1px solid $greenLight;
                 border-radius: 8px;
 
@@ -59,50 +56,21 @@
                     padding: .5em 0;
                 }
 
+                p.description {
+                    margin-top: -1em;
+                    font-style: italic;
+                }
+
                 p:last-of-type {
                     font-style: italic;
                 }
             }
-
-            // li::after {
-            //     position: absolute;
-            //     top: calc(50% - 10px);
-            //     width: 20px;
-            //     height: 20px;
-            //     background-color: $greenLight;
-            //     border-radius: 50%;
-            //     content: '';
-            // }
-
-            // li:nth-child(even) {
-            //     align-self: flex-end;
-            //     transform: translateX(20px);
-            // }
-
-            // li:nth-child(even)::after {
-            //     left: -31px;
-            // }
-
-            // li:nth-child(odd) {
-            //     transform: translateX(-20px);
-            // }
 
             li:nth-child(odd)::after {
                 right: -31px;
             }
 
         }
-
-        // &__items::before {
-        //     position: absolute;
-        //     top: 0;
-        //     left: 50%;
-        //     display: block;
-        //     width: 2px;
-        //     height: 100%;
-        //     background-color: $greenLight;
-        //     content: '';
-        // }
     }
 }
 
@@ -113,12 +81,12 @@
         &__timelines {
     
             h4 {
-                padding: 3em;
                 font-size: 3rem;
             }
     
             &__items {    
-    
+                margin-top: 4em;
+
                 li {
                     border-radius: 16px;
     
@@ -140,59 +108,69 @@
 }
 
 @media (min-width:992px) {
+    .edu-work {
+
+        &__timelines {
+    
+            h4 {
+                font-size: 3.4rem;
+            }
+    
+            &__items {    
+                margin-top: 6em;
+
+                li {
+                    border-radius: 22px;
+    
+                    h6 {
+                        font-size: 2.6rem;
+                    }
+    
+                    p {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:1400px) {
     
 .edu-work {
 
     &__container {
-        display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
         align-items: flex-start;
     }
 
     &__timelines {
+        padding: 4em;
 
         h4 {
-            padding: 2em;
-            font-size: 2rem;
+            font-size: 3.5rem;
         }
 
         &__items {
-            position: relative;
             width: 100%;
-
-
+            margin-top: 8em;
             ul {
-                display: flex;
-                flex-direction: column;
-                // justify-content: center;
-                // align-items: center;
-                margin: 0 2em;
-                list-style: none;
+                min-width: 600px;
             }
 
             li {
-                // text-align: flex;
                 align-self: flex-start;
-                position: relative;
-                margin-bottom: 2em;
-                padding: 1em;
+                margin-bottom: 4em;
                 width: 50%;
-                border: 1px solid $greenLight;
-                border-radius: 8px;
+                border-radius: 16px;
 
                 h6 {
-                    font-size: 1.4rem;
-                    padding: 1em 0;
+                    font-size: 1.8rem;
                 }
 
                 p {
-                    font-size: 1.4rem;
-                    padding: .5em 0;
-                }
-
-                p:last-of-type {
-                    font-style: italic;
+                    font-size: 1.8rem;
                 }
             }
 

@@ -38,12 +38,19 @@
     font-size: 2.2rem;
 }
 
-.green-line {
+.line {
     margin: .5em auto 2em;
     height: 2px;
     width: 30%;
     max-width: 200px;
+}
+
+.green-line {
     background-color: $greenDark;
+}
+
+.white-line {
+    background-color: $my-white;
 }
 
 .boom-btn {
