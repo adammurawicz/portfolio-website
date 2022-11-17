@@ -121,12 +121,14 @@
     animation: navItemsAnimation 1s both;
 }
 
+// nav desktop
+
 .nav-desktop {
     display: none;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 3;
+    z-index: 5;
     justify-content: space-evenly;
    
     &__item {

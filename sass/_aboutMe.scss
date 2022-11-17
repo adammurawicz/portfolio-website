@@ -1,10 +1,14 @@
 
 .about-me{
 color: $my-black;
-@include wrapper;
+position: relative;
+
+    &__text,
+    &__skills {
+        @include wrapper;
+    }
 
     &__text {
-
         p {
             margin-top: 1em;
             font-size: 2rem;

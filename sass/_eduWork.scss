@@ -1,6 +1,6 @@
 
 .edu-work {
-    position: absolute;
+    position: relative;
     overflow: hidden;
     width: 100%;
     background-image: url('../img/workEduMobile.jpg');
@@ -42,7 +42,7 @@
                 position: relative;
                 margin-bottom: 2em;
                 padding: 1em;
-                width: 100%;
+                width: 90%;
                 border: 1px solid $greenLight;
                 border-radius: 8px;
 
@@ -73,6 +73,20 @@
         }
     }
 }
+
+.edu-work::after,
+.edu-work::before {
+    @include block;
+}
+
+.edu-work::after {
+    @include left-top-block
+}
+
+.edu-work::before {
+    @include bottom-right-block
+}
+
 
 @media (min-width:768px) {
     .edu-work {
@@ -146,7 +160,6 @@
     }
 
     &__timelines {
-        padding: 4em;
 
         h4 {
             font-size: 3.5rem;
@@ -161,7 +174,6 @@
 
             li {
                 align-self: flex-start;
-                margin-bottom: 4em;
                 width: 50%;
                 border-radius: 16px;
 

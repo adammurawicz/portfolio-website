@@ -1,5 +1,5 @@
 
-// class
+// classes
 
 .wrapperOne {
     overflow: hidden;
@@ -19,23 +19,21 @@
     background-color: rgba(0,0,0, .3);
 }
 
-.block {
-    position: absolute;
-    height: 20px;
-    width: 200px;
-    transform: skew(45deg);
-    background-color: $my-white;
-    z-index: 3;
-}
-
-.white-left-block {
-    bottom: 0;
-    left: -50px;
-}
-
 .section-title {
     text-align: center;
     font-size: 2.2rem;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width:992px) {
+    .section-title {
+        font-size: 4rem;
+    }
 }
 
 .line {
@@ -69,6 +67,7 @@
     }
 }
 
+
 // mixins
 @mixin heroImg {
     background-repeat: no-repeat;
@@ -83,34 +82,38 @@
     margin: 0 auto;
     overflow: hidden;
 }
-// media
 
-@media (min-width:576px) {
-    .block {
-        height: 30px;
+@mixin block {
+    position: absolute;
+    height: 20px;
+    width: 200px;
+    background-color: $my-white;
+    z-index: 3;
+    content: '';
+
+    @media (min-width: 576px){
+        height: 40px;
         width: 300px;
     }
-}
 
-@media (min-width: 768px) {
-    .section-title {
-        font-size: 3rem;
+    @media (min-width: 992px){
+        height: 45px;
+        width: 450px;
+    }
+    @media (min-width: 1200px){
+        height: 50px;
+        width: 800px;
     }
 }
 
-@media (min-width:992px) {
-    .block {
-        height: 40px;
-        width: 500px;
-    }
+@mixin left-top-block {
+    top: -20px;
+    left: -50px;
+    transform: skew(-45deg);
 }
 
-@media (min-width:992px) {
-    .block {
-        width: 600px;
-    }
-
-    .section-title {
-        font-size: 4rem;
-    }
+@mixin bottom-right-block {
+    bottom:-20px;
+    right: -50px;
+    transform: skew(-45deg) rotate(180deg);
 }
