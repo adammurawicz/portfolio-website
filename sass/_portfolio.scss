@@ -10,37 +10,233 @@
 
     &__accordions {
         display: flex;
-        flex-direction: column;    
+        flex-direction: column;  
         
         &__item {
             margin-top: 2em;
-
+            
             &__top {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column-reverse;
                 justify-content: space-around;
                 align-items: center;
                 padding: 1em;
-                border: 1px solid $greenDark;
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+                color: $my-white;
+                background-image: linear-gradient(45deg, rgba(202,217,89,1) 10%, rgba(100,115,47,1) 75%);
+                
                 
                 &__btn {
-                    padding: 0.5em;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0.3em;
                     display: flex;
-                    flex-direction: column-reverse;
+                    width: 50%;
+                    flex-direction: row;
                     justify-content: center;
+                    border-radius: 12px;
                     align-items: center;
+                    background-color: $my-white;
+                    font-size: 1.4rem;
+                    border: 0px;
+
+                    .far {
+                        font-size: 2.2rem;
+                        padding: .3em;
+                        color: $greenDark;
+                        transition: transform .3s;
+                    }
+
+                    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        height: 120%;
+                        width: 200%;
+                        left: -210%;
+                        top: -10%;
+                        background-color: rgba(0, 0, 0, .2);
+                        filter:blur(4px);
+                        -o-filter:blur(40px);
+                        -ms-filter:blur(40px);
+                        -moz-filter:blur(40px);
+                        -webkit-filter:blur(12px);
+                        transition: left 2s;
+                        border-radius: 40px;
+                    }
+
+                    &:hover.portfolio__accordions__item__top__btn::after{
+                            left: 0%;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                }
+
+                &__info {
+                    text-align: center;
+                    padding: 1em;
                 }
             }
             
             &__bottom {
-                display: flex;
+                position: relative;
+                display: none;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: space-around;
                 align-items: center;
-                border: 1px solid $greenDark;
                 padding: 1em;
+                border-bottom-left-radius: 16px;
+                border-bottom-right-radius: 16px;
+                color: $my-white;
+                overflow: hidden;
+                @include heroImg;
+
+                &--first{
+                    background-image: url('../img/portfolioOne.jpg');
+                    height: 500px;
+                }
+                
+                &--second{
+                    background-image: url('../img/portfolioTwo.jpg');
+                    height: 300px;
+                }
+                
+                &--third{
+                    background-image: url('../img/portfolioThree.jpg');
+                    height: 300px;
+                }
+
+                p, a {
+                    z-index: 3;
+                }
+
+                p {
+                    font-size: 1.8rem;
+                    padding: 0.8em 0;
+                    text-align: center;
+                }
+                
+                p:first-of-type {
+                    text-decoration: underline;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $my-white;
+                    font-size: 1.6rem;
+                    padding: 0.5em;
+                }
+
             }
         }
     }
     
+}
+
+.accordion-active {
+    display: flex;
+}
+
+@media (min-width:768px) {
+    .portfolio {
+        
+        &__text {
+            font-size: 2rem;
+            margin-top: 1.2em;
+            margin-bottom: 1.2em;
+        }
+    
+        &__accordions {
+            
+            &__item {
+                margin-top: 2.5em;
+                
+                &__top {
+                    padding: 1.2em;
+                    
+                    &__btn {
+                        width: 60%;
+                    }
+    
+                    &__info {
+                        font-size: 1.8rem;
+                    }
+                }
+                
+                &__bottom {
+    
+                    p {
+                        font-size: 2rem;
+                    }
+
+                    a {
+                        font-size: 1.8rem;
+                    }
+    
+                }
+            }
+        }
+        
+    }
+    
+}
+
+@media (min-width:1200px) {
+    .portfolio {
+        
+        &__text {
+            font-size: 2rem;
+            margin-top: 1.5em;
+            margin-bottom: 1.5em;
+        }
+    
+        &__accordions {
+            display: flex;
+            flex-direction: column;  
+            justify-content: center;
+            align-items: start;
+            
+            &__item {
+                margin-top: 4em;
+                width: 80%;
+                max-width: 1000px;
+            
+            &:nth-of-type(2n) {
+                align-self: flex-end;
+            }
+                
+                &__top {
+                    padding: 2em;              
+                    
+                    &__btn {
+                        width: 50%;
+                        font-size: 1.6rem;
+    
+                        .far {
+                            font-size: 2.4rem;
+                        }
+    
+                    }
+    
+                }
+                
+                &__bottom {
+    
+                    p {
+                        font-size: 2.2rem;
+                    }
+    
+                    a {
+                        font-size: 2rem;
+                    }
+    
+                }
+            }
+        }
+        
+    }
 }

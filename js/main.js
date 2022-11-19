@@ -7,6 +7,11 @@ const headerTextA = document.querySelector('.header__text a')
 const headerImg = document.querySelector('.header__img')
 const headerIcon = document.querySelector('.header__icon')
 const aboutMeBtn = document.querySelector('.header__text a')
+const accordion = document.querySelector('.portfolio__accordions__item')
+const accordionBtns = document.querySelectorAll('.portfolio__accordions__item__top__btn')
+const accordionBtnArrows = document.querySelectorAll('.portfolio__accordions__item__top__btn .fa-arrow-alt-circle-down')
+const allActiveItems = document.querySelectorAll('.portfolio__accordions__item__bottom')
+
 
 const toggleNav = () => {
     navMobile.classList.toggle('nav-mobile__items--active')
@@ -61,6 +66,31 @@ const btnAction = e => {
     }, 300)
 }
 
+function openAccordion () {
+    if (this.parentElement.nextElementSibling.classList.contains('accordion-active')) {
+        this.parentElement.nextElementSibling.classList.remove('accordion-active')
+        this.firstChild.style.transform = "rotate(0deg)";
+    } else {
+        closeAccordion()
+        this.parentElement.nextElementSibling.classList.toggle('accordion-active')
+        this.firstChild.style.transform = "rotate(180deg)";
+    }
+}
+
+const closeAccordion = () => {
+    allActiveItems.forEach(item => item.classList.remove('accordion-active'))
+    accordionBtnArrows.forEach(arrow => arrow.style.transform = "rotate(0deg)")
+}
+
+const closeAccordionAround = (e) => {
+    if (!e.target.classList.contains('dark') && !e.target.classList.contains('portfolio__accordions__item__top__btn')) {
+        allActiveItems.forEach(item => item.classList.remove('accordion-active'))
+        accordionBtnArrows.forEach(arrow => arrow.style.transform = "rotate(0deg)")
+    }
+}
+
+
+
 const mainFunction = () => {
     burgerBtn.addEventListener('click', toggleNav)
     navMobileItem.forEach(item => {item.addEventListener('click', closeNav)})
@@ -68,6 +98,8 @@ const mainFunction = () => {
     fadeInAnimation()
     fadeInAnimation2()
     aboutMeBtn.addEventListener('click', btnAction)
+    accordionBtns.forEach(btn => btn.addEventListener('click', openAccordion))
+    window.addEventListener('click', closeAccordionAround)
 }
 
 
