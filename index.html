@@ -58,6 +58,8 @@
         </header>
     </div>
         <!-- header end -->
+
+    <main>
         
     <section id="about-me" class="about-me white-section">
             <div class="block white-left-block"></div>
@@ -300,7 +302,27 @@
 
     </section>
 
-    <section style="height: 100vh; background-color: orange;"></section>
+    <section id="contact" class="contact">
+
+        <form class="contact__form">
+
+                    
+            <div class="contact__form__top">
+                <label for="name" class="contact__form__label">Name and surname</label>
+                <input type="text" class="ontact__form__input">
+                <label for="email" class="contact__form__label">Your e-mail</label>
+                <input type="text" class="ontact__form__input">
+            </div>
+
+            <label for="msg" class="contact__form__label">Message</label>
+            <textarea id="msg" cols="30" rows="10" class="contact__form__textarea"></textarea>
+
+            <button type="submit" class="contact__form__btn">Send</button>
+
+        </form>
+
+    </section>
+</main>
 
 <script src="./js/main.js"></script>
 

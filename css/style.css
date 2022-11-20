@@ -1057,7 +1057,7 @@
   .portfolio__accordions__item {
     margin-top: 4em;
     width: 80%;
-    max-width: 1000px;
+    max-width: 800px;
   }
   .portfolio__accordions__item:nth-of-type(2n) {
     -ms-flex-item-align: end;
