@@ -20,8 +20,10 @@
 }
 
 .section-title {
+    position: relative;
     text-align: center;
     font-size: 2.2rem;
+    z-index: 3;
 }
 
 @media (min-width: 768px) {
@@ -37,6 +39,8 @@
 }
 
 .line {
+    position: relative;
+    z-index: 3;
     margin: .5em auto 2em;
     height: 2px;
     width: 30%;
@@ -116,4 +120,41 @@
     bottom:-20px;
     right: -50px;
     transform: skew(-45deg) rotate(180deg);
+}
+
+@mixin contactForm {
+    margin-bottom: 2em;
+    padding: 0.6em 1.2em;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.6rem;
+}
+
+@mixin btn {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 1.4rem;
+    border: 0px;
+    cursor: pointer;
+    background-color: $my-white;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin btnAfter {
+    content: '';
+    position: absolute;
+    height: 120%;
+    width: 200%;
+    left: -210%;
+    top: -10%;
+    background-color: rgba(0, 0, 0, .2);
+    filter:blur(4px);
+    -o-filter:blur(40px);
+    -ms-filter:blur(40px);
+    -moz-filter:blur(40px);
+    -webkit-filter:blur(12px);
+    transition: left 2s;
+    border-radius: 40px;
 }

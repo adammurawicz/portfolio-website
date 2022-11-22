@@ -24,22 +24,14 @@
                 border-top-left-radius: 16px;
                 border-top-right-radius: 16px;
                 color: $my-white;
-                background-image: linear-gradient(45deg, rgba(202,217,89,1) 10%, rgba(100,115,47,1) 75%);
-                
+                background-image: $gradientTwo;
                 
                 &__btn {
-                    overflow: hidden;
-                    position: relative;
+                    @include btn;
                     padding: 0.3em;
                     display: flex;
                     width: 50%;
                     flex-direction: row;
-                    justify-content: center;
-                    border-radius: 12px;
-                    align-items: center;
-                    background-color: $my-white;
-                    font-size: 1.4rem;
-                    border: 0px;
 
                     .far {
                         font-size: 2.2rem;
@@ -50,28 +42,11 @@
 
                     
                     &::after {
-                        content: '';
-                        position: absolute;
-                        height: 120%;
-                        width: 200%;
-                        left: -210%;
-                        top: -10%;
-                        background-color: rgba(0, 0, 0, .2);
-                        filter:blur(4px);
-                        -o-filter:blur(40px);
-                        -ms-filter:blur(40px);
-                        -moz-filter:blur(40px);
-                        -webkit-filter:blur(12px);
-                        transition: left 2s;
-                        border-radius: 40px;
+                        @include btnAfter;
                     }
 
                     &:hover.portfolio__accordions__item__top__btn::after{
                             left: 0%;
-                    }
-
-                    &:hover {
-                        cursor: pointer;
                     }
 
                 }

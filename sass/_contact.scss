@@ -1,0 +1,114 @@
+.contact {
+    position: relative;
+    background-image: url('../img/contact.jpg');
+    color: $my-white;
+
+&__form {
+    @include wrapper;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+        
+        &__top {
+            display: flex;
+            flex-direction: column;
+            &__container {
+                display: flex;
+                flex-direction: column;
+                
+                &__input {
+                    background-color: $my-white;
+                    margin-top: 1em;
+                    padding: 1em;
+                    border: none;
+                }
+                &__label {
+                    margin-top: 2em;
+                    margin-bottom: 0.5em;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        
+        &__textarea {
+        background-color: $my-white;
+        max-width: 100%;
+        min-width: 100%;
+        width: 100%;
+        min-height: 150px;
+
+    }
+
+    &__label{
+        margin-top: 2em;
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+     }
+
+    &__btn {
+        @include btn;
+        padding: 1em;
+        align-self: flex-end;
+        width: 100%;
+        max-width: 300px;
+        margin-top: 2em;
+        
+        &::after {
+            @include btnAfter;
+        }
+
+        
+        &:hover.contact__form__btn::after{
+            left: 0%;
+    }
+    }
+
+ }
+}
+
+.contact::after {
+    @include block;
+    @include left-top-block;
+}
+
+@media (min-width:992px) {
+    .contact {
+    
+    &__form {
+            &__top {
+                flex-direction: row;
+                justify-content: space-between;
+                &__container {
+                    display: flex;
+                    flex-direction: column;
+                    width: 40%;
+                    text-align: center;
+                    
+                    &__label {
+                        font-size: 2rem;
+                    }
+                }
+            }
+    
+            
+            &__textarea {
+            min-height: 200px;
+            height: 200px;
+            font-size: 2rem;
+        }
+    
+        &__label{
+            font-size: 2rem;
+         }
+    
+        &__btn {
+            font-size: 2rem;
+            padding: .5em;
+            max-width: 500px;
+            margin-top: 4em;
+        }
+     }
+    }
+}

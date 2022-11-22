@@ -17,8 +17,10 @@
 }
 
 .section-title {
+  position: relative;
   text-align: center;
   font-size: 2.2rem;
+  z-index: 3;
 }
 
 @media (min-width: 768px) {
@@ -32,6 +34,8 @@
   }
 }
 .line {
+  position: relative;
+  z-index: 3;
   margin: 0.5em auto 2em;
   height: 2px;
   width: 30%;
@@ -103,7 +107,6 @@
   background-color: #f8f8f8;
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
-  background-color: #f8f8f8;
 }
 .nav-mobile__btn__bars {
   width: 100%;
@@ -259,8 +262,23 @@
 @media (min-width: 1400px) {
   .nav-desktop__item {
     font-size: 1.85rem;
+    font-weight: bold;
   }
 }
+.dark-color {
+  color: #252617;
+}
+.dark-color::before {
+  background-color: #252617;
+}
+
+.dark-bgc {
+  background-color: #252617;
+}
+.dark-bgc::before, .dark-bgc::after {
+  background-color: #252617;
+}
+
 .header {
   position: absolute;
   overflow: hidden;
@@ -889,11 +907,22 @@
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   color: #f8f8f8;
-  background-image: linear-gradient(45deg, rgb(202, 217, 89) 10%, rgb(100, 115, 47) 75%);
+  background-image: linear-gradient(45deg, rgb(202, 217, 89) 10%, rgb(52, 64, 26) 75%);
 }
 .portfolio__accordions__item__top__btn {
-  overflow: hidden;
   position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 1.4rem;
+  border: 0px;
+  cursor: pointer;
+  background-color: #f8f8f8;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0.3em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -903,16 +932,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 12px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #f8f8f8;
-  font-size: 1.4rem;
-  border: 0px;
 }
 .portfolio__accordions__item__top__btn .far {
   font-size: 2.2rem;
@@ -942,9 +961,6 @@
 }
 .portfolio__accordions__item__top__btn:hover.portfolio__accordions__item__top__btn::after {
   left: 0%;
-}
-.portfolio__accordions__item__top__btn:hover {
-  cursor: pointer;
 }
 .portfolio__accordions__item__top__info {
   text-align: center;
@@ -1078,6 +1094,191 @@
   }
   .portfolio__accordions__item__bottom a {
     font-size: 2rem;
+  }
+}
+.contact {
+  position: relative;
+  background-image: url("../img/contact.jpg");
+  color: #f8f8f8;
+}
+.contact__form {
+  width: 85%;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  z-index: 3;
+}
+.contact__form__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.contact__form__top__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.contact__form__top__container__input {
+  background-color: #f8f8f8;
+  margin-top: 1em;
+  padding: 1em;
+  border: none;
+}
+.contact__form__top__container__label {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+.contact__form__textarea {
+  background-color: #f8f8f8;
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+  min-height: 150px;
+}
+.contact__form__label {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+.contact__form__btn {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 1.4rem;
+  border: 0px;
+  cursor: pointer;
+  background-color: #f8f8f8;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 2em;
+}
+.contact__form__btn::after {
+  content: "";
+  position: absolute;
+  height: 120%;
+  width: 200%;
+  left: -210%;
+  top: -10%;
+  background-color: rgba(0, 0, 0, 0.2);
+  filter: blur(4px);
+  -o-filter: blur(40px);
+  -ms-filter: blur(40px);
+  -moz-filter: blur(40px);
+  -webkit-filter: blur(12px);
+  -webkit-transition: left 2s;
+  transition: left 2s;
+  border-radius: 40px;
+}
+.contact__form__btn:hover.contact__form__btn::after {
+  left: 0%;
+}
+
+.contact::after {
+  position: absolute;
+  height: 20px;
+  width: 200px;
+  background-color: #f8f8f8;
+  z-index: 3;
+  content: "";
+  top: -20px;
+  left: -50px;
+  -webkit-transform: skew(-45deg);
+          transform: skew(-45deg);
+}
+@media (min-width: 576px) {
+  .contact::after {
+    height: 40px;
+    width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .contact::after {
+    height: 45px;
+    width: 450px;
+  }
+}
+@media (min-width: 1200px) {
+  .contact::after {
+    height: 50px;
+    width: 800px;
+  }
+}
+
+@media (min-width: 992px) {
+  .contact__form__top {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .contact__form__top__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 40%;
+    text-align: center;
+  }
+  .contact__form__top__container__label {
+    font-size: 2rem;
+  }
+  .contact__form__textarea {
+    min-height: 200px;
+    height: 200px;
+    font-size: 2rem;
+  }
+  .contact__form__label {
+    font-size: 2rem;
+  }
+  .contact__form__btn {
+    font-size: 2rem;
+    padding: 0.5em;
+    max-width: 500px;
+    margin-top: 4em;
+  }
+}
+.footer {
+  background-color: #2e2e2e;
+  color: #f8f8f8;
+  text-align: center;
+  padding: 1em;
+}
+
+@media (min-width: 992px) {
+  .footer {
+    font-size: 1.8rem;
   }
 }
 *, *::before, *::after {

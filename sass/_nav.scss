@@ -41,7 +41,6 @@
             content: '';
             background-color: $my-white;
             transition: width .3s;
-            background-color: $my-white;
         }
 
         &__bars {
@@ -171,6 +170,24 @@
 
         &__item {
             font-size: 1.85rem;
+            font-weight: bold;
         }
+    }
+}
+
+.dark-color {
+    color: $greenDark2;
+    
+    &::before {
+        background-color: $greenDark2;
+    }
+}
+
+.dark-bgc {
+    background-color: $greenDark2;
+    
+    &::before,
+    &::after {
+        background-color: $greenDark2;
     }
 }
