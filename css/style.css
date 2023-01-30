@@ -987,6 +987,7 @@
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+  opacity: 0;
 }
 .portfolio__accordions__item__bottom--first {
   background-image: url("../img/portfolioOne.jpg");
@@ -999,6 +1000,9 @@
 .portfolio__accordions__item__bottom--third {
   background-image: url("../img/portfolioThree.jpg");
   height: 300px;
+}
+.portfolio__accordions__item__bottom--third a {
+  margin-top: -4em;
 }
 .portfolio__accordions__item__bottom p, .portfolio__accordions__item__bottom a {
   z-index: 3;
@@ -1022,8 +1026,27 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-animation: changeOpacity 1.5s forwards;
+          animation: changeOpacity 1.5s forwards;
 }
 
+@-webkit-keyframes changeOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes changeOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @media (min-width: 768px) {
   .portfolio__text {
     font-size: 2rem;
